@@ -29,14 +29,6 @@ print(count)
 
 
 
-# N, M을 공백으로 구분하여 입력받기
-n, m = map(int, input().split())
-
-# 2차원 리스트의 맵 정보 입력받기
-graph = []
-for i in range(n):   # n줄에 걸쳐서 입력 <- 공백 없이 0과 1로 구성된 문자열 형태
-    graph.append(list(map(int, input())))   # 한 줄 입력받고 정수형 리스트 변환 (모든 원소가 0 또는 1)
-
 # DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문
 def dfs(x, y):
     # 주어진 범위를 벗어나는 경우에는 즉시 종료
@@ -55,6 +47,14 @@ def dfs(x, y):
         return True   # 결과적으로 True 반환 -> 현재 위치에 대해 처음 DFS 처리 되었기에 그 위치의 result 증가
 
     return False
+
+# N, M을 공백으로 구분하여 입력받기
+n, m = map(int, input().split())
+
+# 2차원 리스트의 맵 정보 입력받기
+graph = []
+for i in range(n):   # n줄에 걸쳐서 입력 <- 공백 없이 0과 1로 구성된 문자열 형태
+    graph.append(list(map(int, input())))   # 한 줄 입력받고 정수형 리스트 변환 (모든 원소가 0 또는 1)
 
 # 모든 노드(위치)에 대하여 음료수 채우기
 result = 0
