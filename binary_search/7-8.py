@@ -1,19 +1,5 @@
 # 실전문제 7-8 : 떡볶이 떡 만들기
 
-# 떡의 개수(N)와 요청한 떡의 길이(M)를 입력받기
-n, m = list(map(int, input().split()))
-# 각 떡의 개별 높이 정보를 입력받기
-h_list = list(map(int, input().split()))
-
-max_h = max_height(n, m, h_list)
-print(max_h)
-
-"""
-# 이진 탐색을 위한 시작점과 끝점 설정
-start = 0
-end = max(array)
-"""
-
 def max_height(n, m, h_list):
     height = 1
 
@@ -31,3 +17,17 @@ def max_height(n, m, h_list):
             height += 1
         else:
             height -= 1
+
+# 떡의 개수(N)와 요청한 떡의 길이(M)를 입력받기
+n, m = list(map(int, input().split()))
+# 각 떡의 개별 높이 정보를 입력받기
+h_list = list(map(int, input().split()))
+
+max_h = max_height(n, m, h_list)
+print(max_h)
+
+"""
+# 이진 탐색을 위한 시작점과 끝점 설정
+start = 0
+end = max(array)
+"""
