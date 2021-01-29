@@ -26,8 +26,7 @@ h_list = list(map(int, input().split()))
 max_h = max_height(n, m, h_list)
 print(max_h)
 
-"""
 # 이진 탐색을 위한 시작점과 끝점 설정
 start = 0
-end = max(array)
-"""
+end = max(h_list)
+
