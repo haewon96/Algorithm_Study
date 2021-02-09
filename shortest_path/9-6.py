@@ -10,7 +10,7 @@ def heapsort(iterable):   # 리스트나 튜플과 같은 iterable한 객체
 
     # 모든 원소를 차례대로 힙에 삽입 <- heapq.heappush() 메소드
     for value in iterable:
-        heapq.heappush(h, value)   # 힙 라이브러리에 구현되어 있는 메소드 이용하여 특정 리스트에 데이터 넣기
+        heapq.heappush(h, value)          # 힙 라이브러리에 구현되어 있는 메소드 이용하여 특정 리스트에 데이터 넣기
     # 힙에 삽입된 모든 원소를 차례대로 꺼내어 result 리스트에 담기 <- heapq.heappop() 메소드
     for i in range(len(h)):
         result.append(heapq.heappop(h))   # 힙 라이브러리에 구현되어 있는 메소드 이용하여 특정 리스트에 데이터 꺼내기
