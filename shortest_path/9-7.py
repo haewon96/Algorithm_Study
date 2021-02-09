@@ -10,7 +10,7 @@ def heapsort(iterable):
 
     # 모든 원소를 차례대로 힙에 삽입 <- heapq.heappush() 메소드
     for value in iterable:
-        heapq.heappush(h, -value)   # 최대 힙을 이용하기 위해서 데이터를 힙에 넣기 전에 부호를 바꾸어 넣고
+        heapq.heappush(h, -value)          # 최대 힙을 이용하기 위해서 데이터를 힙에 넣기 전에 부호를 바꾸어 넣기
     # 힙에 삽입된 모든 원소를 차례대로 꺼내어 담기 <- heapq.heappush() 메소드
     for i in range(len(h)):
         result.append(-heapq.heappop(h))   # 최대 힙을 이용하기 위해서 다시 데이터를 꺼낼 때 마찬가지로 부호를 바꾸어 꺼내기
