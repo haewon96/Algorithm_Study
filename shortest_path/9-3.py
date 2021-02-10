@@ -15,7 +15,7 @@ for a in range(1, n + 1):
         if a == b:
             graph[a][b] = 0
 
-# 각 간선에 대한 정보를 입력받아 그 값으로 초기화
+# 각 간선에 대한 정보를 입력받아, 그 값으로 초기화
 for _ in range(m):
     # A에서 B로 가는 비용은 C라고 설정
     a, b, c = map(int, input().split())
@@ -32,7 +32,7 @@ for k in range(1, n + 1):
             graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
             # a에서 b까지 가는 최단 노드 = 기존의 값과 a에서 k로 갔다가 다시 k에서 b로 가는 거리 비교하여 더 작은 값으로 갱신
 
-# 수행된 결과를 출력
+# 수행된 결과 출력
 for a in range(1, n + 1):
     for b in range(1, n + 1):
         # 도달할 수 없는 경우, 무한(INFINITY)이라고 출력
