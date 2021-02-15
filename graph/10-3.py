@@ -23,6 +23,7 @@ def find_parent(parent, x):   # parent : 부모 테이블 / x : 노드 번호
     return x
 """
 
+
 # union 연산 : 두 원소가 속한 집합을 합치기
 def union_parent(parent, a, b):
     a = find_parent(parent, a)
