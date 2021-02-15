@@ -1,18 +1,18 @@
 # 예제 10-1 : 기본적인 서로소 집합 알고리즘 소스코드
 
-# find 연산 : 특정 원소가 속한 집합을 찾기 -> 루트노드 반환하기
+# find 연산 : 특정 원소가 속한 집합을 찾기 -> 루트 노드 반환하기
 def find_parent(parent, x):   # parent : 부모 테이블 / x : 노드 번호
-    # 관행적인 함수명 <- 경로 압축 기법 사용하면 사실상 루트노드가 테이블상 자신의 부모로 기록될 수 있기 때문에 합리적 !
+    # 관행적인 함수명 <- 경로 압축 기법 사용하면 사실상 루트 노드가 테이블상 자신의 부모로 기록될 수 있기 때문에 합리적 !
     # 루트 노드가 아니라면, 루트 노드를 찾을 때까지 재귀적으로 호출
-    if parent[x] != x:   # 현재 부모가 자기 자신이 아니라면 (루트노드 X)
-        return find_parent(parent, parent[x])   # 루트노드를 찾기 위해 자신의 부모 노드 번호를 통해 재귀적으로 함수 호출
+    if parent[x] != x:   # 현재 부모가 자기 자신이 아니라면 (루트 노드 X)
+        return find_parent(parent, parent[x])   # 루트 노드를 찾기 위해 자신의 부모 노드 번호를 통해 재귀적으로 함수 호출
     return x
 
 # union 연산 : 두 원소가 속한 집합을 합치기
 def union_parent(parent, a, b):
-    a = find_parent(parent, a)   # a의 루트노드 찾기
-    b = find_parent(parent, b)   # b의 루트노드 찾기
-    if a < b:   # 각각의 루트노드를 확인하여 번호가 큰 쪽이 작은 쪽을 부모로 설정
+    a = find_parent(parent, a)   # a의 루트 노드 찾기
+    b = find_parent(parent, b)   # b의 루트 노드 찾기
+    if a < b:   # 각각의 루트 노드를 확인하여 번호가 큰 쪽이 작은 쪽을 부모로 설정
         parent[b] = a
     else:
         parent[a] = b
@@ -33,10 +33,10 @@ for i in range(e):
 # 각 원소가 속한 집합 출력
 print('각 원소가 속한 집합 : ', end=' ')
 for i in range(1, v + 1):
-    print(find_parent(parent, i), end=' ')   # 각 노드에 대한 루트노드 확인 -> 루트노드가 같은 원소끼리는 같은 집합으로 판단 가능
+    print(find_parent(parent, i), end=' ')   # 각 노드에 대한 루트 노드 확인 -> 루트 노드가 같은 원소끼리는 같은 집합으로 판단 가능
 print()
 
 # 부모 테이블 내용 출력
 print('부모 테이블 : ', end=' ')
 for i in range(1, v + 1):
-    print(parent[i], end=' ')   # 유의) 단순히 자신의 부모에 대한 정보 != 루트노드(집합)에 대한 정보
+    print(parent[i], end=' ')   # 유의) 단순히 자신의 부모에 대한 정보 != 루트 노드(집합)에 대한 정보
